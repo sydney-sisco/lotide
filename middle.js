@@ -36,7 +36,6 @@ const middle = function(array) {
     middle.push(array[Math.floor(array.length / 2)]);
   }
 
-  console.log('returning:', middle);
   return middle;
 };
 
