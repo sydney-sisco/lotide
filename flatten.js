@@ -20,7 +20,7 @@ const assertArraysEqual = function(actual, expected) {
 };
 
 
-// implement the flatten function using recursion  
+// implement the flatten function using recursion
 const flatten = function(array) {
   const flattened = [];
   for (const element of array) {
