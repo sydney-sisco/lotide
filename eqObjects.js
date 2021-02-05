@@ -69,3 +69,70 @@ assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
 
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
 assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
+
+
+const obj1 = {
+  a: '1',
+  b: {
+    c: 2,
+    d: {
+      e: 3,
+      f: 4,
+      g: {
+        h: 5,
+        i: {
+          j: {
+            k: {
+              l: 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+const obj2 = {
+  b: {
+    c: 2,
+    d: {
+      e: 3,
+      f: 4,
+      g: {
+        h: 5,
+        i: {
+          j: {
+            k: {
+              l: 0
+            }
+          }
+        }
+      }
+    }
+  },
+  a: '1',
+}
+
+const obj3 = {
+  a: '1',
+  b: {
+    c: 2,
+    d: {
+      e: 3,
+      f: 4,
+      g: {
+        h: 5,
+        i: {
+          j: {
+            k: {
+              l: 1
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+assertEqual(eqObjects(obj1, obj2), true);
+assertEqual(eqObjects(obj1, obj3), false);
