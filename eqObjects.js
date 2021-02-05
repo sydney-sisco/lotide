@@ -90,7 +90,7 @@ const obj1 = {
       }
     }
   }
-}
+};
 
 const obj2 = {
   b: {
@@ -111,7 +111,7 @@ const obj2 = {
     }
   },
   a: '1',
-}
+};
 
 const obj3 = {
   a: '1',
@@ -132,7 +132,7 @@ const obj3 = {
       }
     }
   }
-}
+};
 
 assertEqual(eqObjects(obj1, obj2), true);
 assertEqual(eqObjects(obj1, obj3), false);
