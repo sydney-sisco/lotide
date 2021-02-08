@@ -1,23 +1,25 @@
-const assertEqual = require('../assertEqual');
+// // test case: check that original array is not modified
+
+
+const assert = require('chai').assert;
 const tail = require('../tail');
 
-// test case: check basic functionality
-let test = [1, 2, 3];
-let testTail = tail(test);
-assertEqual(testTail.toString(), [2, 3].toString());
+describe('#tail', () => {
+  it('returns [2, 3] for [1, 2, 3]', () => {
+    assert.deepEqual(tail([1, 2, 3]), [2, 3]);
+  });
 
-// test case: array with single element returns empty array
-test = [5];
-testTail = tail(test);
-assertEqual(testTail.toString(), [].toString());
+  it('returns empty array for array with single element', () => {
+    assert.deepEqual(tail([5]), []);
+  });
 
-// test case: empty array returns empty array
-test = [];
-testTail = tail(test);
-assertEqual(testTail.toString(), [].toString());
+  it('returns empty array for empty array', () => {
+    assert.deepEqual(tail([]), []);
+  });
 
-
-// test case: check that original array is not modified
-test = ["Jan", "Feb", "March", "April"];
-tail(test);
-assertEqual(test.length, 4); // original array should still have 3 elements!
+  it('should not modify the original array', () => {
+    const input = ["Jan", "Feb", "March", "April"];
+    tail(input);
+    assert.equal(input.length, 4);
+  });
+});
