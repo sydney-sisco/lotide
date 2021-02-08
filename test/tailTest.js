@@ -1,6 +1,3 @@
-// // test case: check that original array is not modified
-
-
 const assert = require('chai').assert;
 const tail = require('../tail');
 
